@@ -424,22 +424,22 @@ sub _loadImage {
 
 	# handlers moved to Wx.pm OnInit
 # 	# Initialize required image handler
-# 	if (!$addedHandlers{$ext}) {
-# 		$ext = lc $ext;
-# 		if ($ext eq '.png') {
-# 			$handler = new Wx::PNGHandler();
-# 		} elsif ($ext eq '.jpg' || $ext eq '.jpeg') {
-# 			$handler = new Wx::JPEGHandler();
-# 		} elsif ($ext eq '.bmp') {
-# 			$handler = new Wx::BMPHandler();
-# 		} elsif ($ext eq '.xpm') {
-# 			$handler = new Wx::XPMHandler();
-# 		}
-# 
-# 		return unless $handler;
-# 		Wx::Image::AddHandler($handler);
-# 		$addedHandlers{$ext} = 1;
-# 	}
+	if (!$addedHandlers{$ext}) {
+		$ext = lc $ext;
+		if ($ext eq '.png') {
+			$handler = new Wx::PNGHandler();
+		} elsif ($ext eq '.jpg' || $ext eq '.jpeg') {
+			$handler = new Wx::JPEGHandler();
+		} elsif ($ext eq '.bmp') {
+			$handler = new Wx::BMPHandler();
+		} elsif ($ext eq '.xpm') {
+			$handler = new Wx::XPMHandler();
+		}
+
+		return unless $handler;
+		Wx::Image::AddHandler($handler);
+		$addedHandlers{$ext} = 1;
+	}
 
 	my $image = Wx::Image->newNameType($file, wxBITMAP_TYPE_ANY);
 	

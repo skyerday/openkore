@@ -59,7 +59,8 @@
 	#endif
 	/* the location of <hash_fun.h>/<stl_hash_fun.h> */
 	#if GCC_VERSION < 40300
-		#define HASH_FUN_H <ext/hash_fun.h>
+		#define HASH_FUN_H <functional>
+		#define HASH_NAMESPACE std
 	#else
 		#define HASH_FUN_H <backward/hash_fun.h>
 	#endif

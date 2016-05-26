@@ -75,8 +75,8 @@ sub OnInit {
 
 	$mapview = new Interface::Wx::MapViewer($frame);
 	$mapview->setMapDir($options{maps});
-	$mapview->onMouseMove->add(undef, \&onMouseMove);
-	$mapview->onMapChange->add(undef, \&onMapChange);
+	$mapview->onMouseMove(undef, \&onMouseMove);
+	$mapview->onMapChange-(undef, \&onMapChange);
 	$sizer->Add($mapview, 1, wxGROW);
 
 	$status = new Wx::StatusBar($frame, -1, wxST_SIZEGRIP);
@@ -87,7 +87,7 @@ sub OnInit {
 	$frame->SetSizer($sizer);
 
 	if ($ARGV[0] eq '') {
-		$mapview->onClick->add(undef, \&onClick);
+		$mapview->onClick(undef, \&onClick);
 
 		my $timer = new Wx::Timer($self, 5);
 		EVT_TIMER($self, 5, \&onTimer);
@@ -99,7 +99,7 @@ sub OnInit {
 		$timer->Start(50);
 
 	} else {
-		$field = new Field(file => "$options{fields}/$ARGV[0].fld");
+		$field = new Field(file => "$options{fields}/$ARGV[0].fld.gz");
 		$mapview->set($ARGV[0], $ARGV[1], $ARGV[2], $field);
 		$mapview->update;
 	}
@@ -157,7 +157,7 @@ sub onTimer {
 
 	if (!$field || $state->{fieldName} ne $field->name()) {
 		eval {
-			$field = new Field(file => "$options{fields}/$state->{fieldBaseName}.fld",
+			$field = new Field(file => "$options{fields}/$state->{fieldBaseName}.fld.gz",
 				loadDistanceMap => 0);
 			$field->{name} = $state->{fieldName};
 		};
