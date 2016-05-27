@@ -66,6 +66,8 @@ my $state;
 sub OnInit {
 	my $self = shift;
 
+	Wx::Image::AddHandler (new Wx::XPMHandler);
+
 	$frame = new Wx::Frame(undef, -1, 'Map viewer', wxDefaultPosition, wxDefaultSize,
 		wxDEFAULT_FRAME_STYLE ^ wxMAXIMIZE_BOX);
 	$frame->SetClientSize(75, 100);
@@ -75,8 +77,8 @@ sub OnInit {
 
 	$mapview = new Interface::Wx::MapViewer($frame);
 	$mapview->setMapDir($options{maps});
-	$mapview->onMouseMove(undef, \&onMouseMove);
-	$mapview->onMapChange-(undef, \&onMapChange);
+	$mapview->onMouseMove(\&onMouseMove, undef);
+	$mapview->onMapChange(\&onMapChange, undef);
 	$sizer->Add($mapview, 1, wxGROW);
 
 	$status = new Wx::StatusBar($frame, -1, wxST_SIZEGRIP);
@@ -87,7 +89,7 @@ sub OnInit {
 	$frame->SetSizer($sizer);
 
 	if ($ARGV[0] eq '') {
-		$mapview->onClick(undef, \&onClick);
+		$mapview->onClick(\&onClick, undef);
 
 		my $timer = new Wx::Timer($self, 5);
 		EVT_TIMER($self, 5, \&onTimer);
@@ -108,16 +110,15 @@ sub OnInit {
 }
 
 sub onMouseMove {
-	my (undef, undef, $args) = @_;
-	my ($x, $y) = @{$args};
+	my ($self, $x, $y) = @_;
+
 	$x = 0 if ($x < 0);
 	$y = 0 if ($y < 0);
 	$status->SetStatusText("Mouse over: $x, $y", 1);
 }
 
 sub onClick {
-	my (undef, undef, $args) = @_;
-	my ($x, $y) = @{$args};
+	my ($self, $x, $y) = @_;
 
 	if ($state->{bus}{host} && (!$bus || $bus->serverHost() ne $state->{bus}{host} || $bus->serverPort() ne $state->{bus}{port})) {
 		require Bus::Client;

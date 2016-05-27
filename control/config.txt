@@ -738,3 +738,5 @@ logToFile_Errors
 logToFile_Messages
 logToFile_Warnings
 history_max 50
+### Customize plugin
+state_enable 0

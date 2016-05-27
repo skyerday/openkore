@@ -71,7 +71,7 @@ sub onMainLoopPost {
 		}
 
 		if ($enable == 1) { 
-			if (open($f, ">:utf8", "$Settings::logs_folder/state_".$config{'username'}.".yml")) {
+			if (open($f, ">:utf8", "$Settings::logs_folder/state.yml")) {
 				my $writer = new Data::YAML::Writer();
 				$writer->write(\%state, $f);
 				close $f;
