@@ -29,6 +29,7 @@ use Exporter;
 use base qw(Exporter);
 use Config;
 use FastUtils;
+use Translation qw(T TF);
 
 use Globals qw($masterServer);
 use Utils::DataStructures (':all', '!/^binFind$/');
@@ -1338,11 +1339,11 @@ sub timeConvert {
 	my $seconds = $time;
 	my $gathered = '';
 
-	$gathered = "$hours hours " if ($hours);
-	$gathered .= "$minutes minutes " if ($minutes);
-	$gathered .= "$seconds seconds" if ($seconds);
+	$gathered = ("$hours " . T('hours') . ' ') if ($hours);
+	$gathered .= ("$minutes " . T('minutes') . ' ') if ($minutes);
+	$gathered .= ("$seconds " . T('seconds') . ' ') if ($seconds);
 	$gathered =~ s/ $//;
-	$gathered = '0 seconds' if ($gathered eq '');
+	$gathered = ('0 ' . T('seconds')) if ($gathered eq '');
 	return $gathered;
 }
 
