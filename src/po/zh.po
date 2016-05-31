@@ -246,9 +246,9 @@ msgstr ""
 " 重新嘗試中..."
 
 #: ../AI/CoreLogic.pm:612 ../AI/CoreLogic.pm:2008
-#, fuzzy, perl-format
+#, perl-format
 msgid "Calculating random route to: %s: %s, %s\n"
-msgstr "計算隨機路徑至: %s(%s): %s, %s\n"
+msgstr "計算隨機路徑至: %s: %s, %s\n"
 
 #: ../AI/CoreLogic.pm:660
 msgid "Timeout equiping for skill\n"
@@ -279,12 +279,12 @@ msgstr "因死亡而啟動自動存倉功能\n"
 #: ../AI/CoreLogic.pm:940
 #, perl-format
 msgid "Moving to %s - %d,%d\n"
-msgstr "正在移動至 %s - %d,%d\n"
+msgstr "正在移動至%s - %d,%d\n"
 
 #: ../AI/CoreLogic.pm:942
-#, fuzzy, perl-format
+#, perl-format
 msgid "Moving to %s\n"
-msgstr "%s; 移動至 (%s, %s)\n"
+msgstr "移動至%s\n"
 
 #: ../AI/CoreLogic.pm:967
 #, fuzzy
@@ -2087,9 +2087,8 @@ msgstr "您已加入這個聊天室 %s\n"
 #: ../Network/Receive/ServerType0.pm:1836
 #: ../Network/Receive/ServerType0.pm:3630 ../Network/Receive.pm:575
 #: ../Misc.pm:1792
-#, fuzzy
 msgid "Unknown"
-msgstr "未知域,"
+msgstr "未知"
 
 #: ../Network/Receive/kRO/Sakexe_0.pm:1397
 #: ../Network/Receive/ServerType0.pm:1838
@@ -5482,27 +5481,27 @@ msgstr ""
 
 #. Translation Comment: Message displays following: quantity, the name of the entity and its element
 #: ../Network/Receive.pm:1701
-#, fuzzy, perl-format
+#, perl-format
 msgid "You have %s %s(s) of %s now\n"
-msgstr "您有 %s"
+msgstr "您目前有 %s 個 %s，全部是 %s 個\n"
 
 #. Translation Comment: Message displays following: quantity and the name of the entity
 #: ../Network/Receive.pm:1703 ../Network/Receive.pm:1863
-#, fuzzy, perl-format
+#, perl-format
 msgid "You have %s %s(s) now\n"
-msgstr "您有 %s"
+msgstr "您目前有 %s 個 %s\n"
 
 #. Translation Comment: Message displays following: actor, quantity, the name of the entity and its element
 #: ../Network/Receive.pm:1709
-#, fuzzy, perl-format
+#, perl-format
 msgid "%s has %s %s(s) of %s now\n"
-msgstr "%s 有 %s "
+msgstr "%s目前有 %s 個 %s，全部是 %s 個\n"
 
 #. Translation Comment: Message displays following: actor, quantity and the name of the entity
 #: ../Network/Receive.pm:1711 ../Network/Receive.pm:1865
-#, fuzzy, perl-format
+#, perl-format
 msgid "%s has %s %s(s) now\n"
-msgstr "%s 有 %s "
+msgstr "%s目前有 %s 個 %s\n"
 
 #: ../Network/Receive.pm:1723
 msgid "Monster %s has hp %s/%s (%s%)\n"
@@ -10273,7 +10272,7 @@ msgid "attacks"
 msgstr "攻擊"
 
 #: ../Misc.pm:3331
-#, fuzzy, perl-format
+#, perl-format
 msgid "%s %s %s on %s (Delay: %sms)\n"
 msgstr "%s %s %s於%s (延遲 %s 毫秒)\n"
 
