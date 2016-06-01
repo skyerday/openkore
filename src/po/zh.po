@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenKore 1.9.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-30 21:26+0800\n"
+"POT-Creation-Date: 2016-06-01 15:39+0800\n"
 "PO-Revision-Date: 2014-12-02 01:53-0000\n"
 "Last-Translator: \n"
 "Language-Team: littlewens <littlewens@yahoo.com.tw>\n"
@@ -97,7 +97,7 @@ msgstr "物品欄的物品 '%s' 已裝備.\n"
 msgid "No such equipped Inventory Item: %s in slot: %s\n"
 msgstr "物品欄裡沒有這種 equipped 的物品: %s 於裝備部位: %s\n"
 
-#: ../Actor/Monster.pm:30
+#: ../Actor/Monster.pm:31
 msgid "Monster"
 msgstr "怪物"
 
@@ -245,7 +245,7 @@ msgstr ""
 "無效的指定的隨機走動座標\n"
 " 重新嘗試中..."
 
-#: ../AI/CoreLogic.pm:612 ../AI/CoreLogic.pm:2008
+#: ../AI/CoreLogic.pm:612 ../AI/CoreLogic.pm:2006
 #, perl-format
 msgid "Calculating random route to: %s: %s, %s\n"
 msgstr "計算隨機路徑至: %s: %s, %s\n"
@@ -259,7 +259,7 @@ msgstr "為了技能而裝備的逾時\n"
 msgid "Failed to take %s (%s) from (%s, %s) to (%s, %s)\n"
 msgstr "撿取%s (%s)失敗, 從 (%s, %s) 到 (%s, %s)\n"
 
-#: ../AI/CoreLogic.pm:776 ../AI/CoreLogic.pm:2925
+#: ../AI/CoreLogic.pm:776 ../AI/CoreLogic.pm:2923
 #, perl-format
 msgid "Routing to (%s, %s) to take %s (%s), distance %s\n"
 msgstr "計算路徑至 (%s, %s) 以撿取 %s (%s), 距離 %s\n"
@@ -299,8 +299,60 @@ msgstr "*** 您已死亡, 自動斷線! ***\n"
 msgid "Auto-storaging due to excess weight\n"
 msgstr "因負重而啟動自動存倉功能\n"
 
-#: ../AI/CoreLogic.pm:1122 ../AI/CoreLogic.pm:1123 ../AI/CoreLogic.pm:2393
-#: ../AI/CoreLogic.pm:2394 ../Network/Receive/kRO/Sakexe_0.pm:5098
+#: ../AI/CoreLogic.pm:1145
+#, fuzzy, perl-format
+msgid "Auto-storaging due to insufficient %s\n"
+msgstr "因死亡而啟動自動存倉功能\n"
+
+#: ../AI/CoreLogic.pm:1207
+#, fuzzy
+msgid "Teleporting to auto-storage\n"
+msgstr "正在瞬移以避免傳點\n"
+
+#: ../AI/CoreLogic.pm:1212
+#, fuzzy, perl-format
+msgid "Calculating auto-storage route to: %s(%s): %s, %s\n"
+msgstr "計算路徑至: %s(%s): %s, %s\n"
+
+#: ../AI/CoreLogic.pm:1226
+msgid "Warning storageAuto has changed. Please read News.txt\n"
+msgstr ""
+
+#: ../AI/CoreLogic.pm:1233
+msgid "Using storage steps defined in config.\n"
+msgstr ""
+
+#: ../AI/CoreLogic.pm:1235
+msgid "Something is wrong with storageAuto_npc_type in your config.\n"
+msgstr ""
+
+#: ../AI/CoreLogic.pm:1271 ../AI/CoreLogic.pm:1434
+#, fuzzy
+msgid "Auto disconnecting on StorageFull!\n"
+msgstr "伺服器已關閉，自動斷線！\n"
+
+#: ../AI/CoreLogic.pm:1272 ../AI/CoreLogic.pm:1435
+#, fuzzy
+msgid "*** Your storage is full , disconnect! ***\n"
+msgstr "*** 您已被人密語, 自動斷線! ***\n"
+
+#: ../AI/CoreLogic.pm:1287
+#, fuzzy, perl-format
+msgid "Unable to store %s.\n"
+msgstr "無法開啟 %s\n"
+
+#: ../AI/CoreLogic.pm:1391
+#, fuzzy, perl-format
+msgid "Attempt to get %s x %s from storage, retry: %s\n"
+msgstr "試圖從您的好友清單中移除 %s\n"
+
+#: ../AI/CoreLogic.pm:1402
+#, perl-format
+msgid "storage: %s out of stock\n"
+msgstr ""
+
+#: ../AI/CoreLogic.pm:1404 ../AI/CoreLogic.pm:2391 ../AI/CoreLogic.pm:2392
+#: ../Network/Receive/kRO/Sakexe_0.pm:5098
 #: ../Network/Receive/kRO/Sakexe_0.pm:5099
 #: ../Network/Receive/ServerType0.pm:5682
 #: ../Network/Receive/ServerType0.pm:5683
@@ -308,151 +360,208 @@ msgstr "因負重而啟動自動存倉功能\n"
 msgid "Disconnecting on empty %s!\n"
 msgstr "因已無 %s 而斷線中!\n"
 
-#: ../AI/CoreLogic.pm:1990
+#: ../AI/CoreLogic.pm:1415
+msgid ""
+"Kore tried to get an item from storage 3 times, but failed.\n"
+"This problem could be caused by a server bug.\n"
+"To work around this problem, set 'relogAfterStorage' to 1, and relogin.\n"
+msgstr ""
+
+#: ../AI/CoreLogic.pm:1431
+msgid "Character is still overweight after storageAuto (storage is full?)\n"
+msgstr "在自動存倉後，仍然超重 (倉庫滿了嗎？)\n"
+
+#: ../AI/CoreLogic.pm:1472
+msgid "Auto-sell sequence completed.\n"
+msgstr "已完成自動賣物\n"
+
+#: ../AI/CoreLogic.pm:1519
+msgid "Teleporting to auto-sell\n"
+msgstr "以瞬移方式前往自動賣物\n"
+
+#: ../AI/CoreLogic.pm:1523
+#, perl-format
+msgid "Calculating auto-sell route to: %s(%s): %s, %s\n"
+msgstr "計算自動賣物路徑至: %s(%s): %s, %s\n"
+
+#: ../AI/CoreLogic.pm:1705
+msgid "Teleporting to auto-buy\n"
+msgstr "以瞬移方式前往自動買物\n"
+
+#: ../AI/CoreLogic.pm:1712
+#, perl-format
+msgid "Calculating auto-buy route to: %s (%s): %s, %s\n"
+msgstr "計算自動買物路徑至: %s(%s): %s, %s\n"
+
+#: ../AI/CoreLogic.pm:1838
+#, perl-format
+msgid "Invalid map specified for lockMap - map %s doesn't exist\n"
+msgstr "lockMap 設置失敗 - 地圖 %s 不存在\n"
+
+#: ../AI/CoreLogic.pm:1861
+msgid "Invalid coordinates specified for lockMap, coordinates are unwalkable\n"
+msgstr "lockMap 座標設置錯誤, 無法前往該座標\n"
+
+#: ../AI/CoreLogic.pm:1868
+#, perl-format
+msgid "Calculating lockMap route to: %s(%s): %s, %s\n"
+msgstr "計算 lockMap 路徑至: %s(%s): %s, %s\n"
+
+#: ../AI/CoreLogic.pm:1870
+#, perl-format
+msgid "Calculating lockMap route to: %s(%s)\n"
+msgstr "計算 lockMap 路徑至: %s(%s)\n"
+
+#: ../AI/CoreLogic.pm:1917
+#, fuzzy, perl-format
+msgid "Auto-adding stat %s\n"
+msgstr "自動加技能點 %s\n"
+
+#: ../AI/CoreLogic.pm:1988
 msgid "Coordinate lockmap is used; randomWalk disabled\n"
 msgstr ""
 
-#: ../AI/CoreLogic.pm:2005
+#: ../AI/CoreLogic.pm:2003
 msgid ""
 "Invalid coordinates specified for randomWalk (coordinates are unwalkable); "
 "randomWalk disabled\n"
 msgstr "無效的randomWalk指定座標(座標點是無法走動區域); randomWalk disabled\n"
 
-#: ../AI/CoreLogic.pm:2055
+#: ../AI/CoreLogic.pm:2053
 #, perl-format
 msgid "Found my master - %s\n"
 msgstr "找到我的主人 - %s\n"
 
-#: ../AI/CoreLogic.pm:2062
+#: ../AI/CoreLogic.pm:2060
 msgid "Found my master!\n"
 msgstr "找到我的主人了!\n"
 
-#: ../AI/CoreLogic.pm:2134
+#: ../AI/CoreLogic.pm:2132
 msgid "Master died. I'll wait here.\n"
 msgstr "主人死了. 我會在這裡等候.\n"
 
-#: ../AI/CoreLogic.pm:2137
+#: ../AI/CoreLogic.pm:2135
 msgid "I lost my master\n"
 msgstr "我跟丟了主人\n"
 
-#: ../AI/CoreLogic.pm:2139
+#: ../AI/CoreLogic.pm:2137
 msgid "Trying to get him back\n"
 msgstr "試著讓他回來\n"
 
-#: ../AI/CoreLogic.pm:2146 ../AI/CoreLogic.pm:2231
+#: ../AI/CoreLogic.pm:2144 ../AI/CoreLogic.pm:2229
 msgid "My master disconnected\n"
 msgstr "我的主人下線了\n"
 
-#: ../AI/CoreLogic.pm:2182 ../AI/CoreLogic.pm:2259
+#: ../AI/CoreLogic.pm:2180 ../AI/CoreLogic.pm:2257
 msgid "My master teleported\n"
 msgstr "我的主人已瞬移\n"
 
-#: ../AI/CoreLogic.pm:2186
+#: ../AI/CoreLogic.pm:2184
 msgid "Trying to find lost master\n"
 msgstr "試著找尋跟丟的主人\n"
 
-#: ../AI/CoreLogic.pm:2211
+#: ../AI/CoreLogic.pm:2209
 msgid "Don't know what happened to Master\n"
 msgstr "不知道主人發生了什麼事\n"
 
-#: ../AI/CoreLogic.pm:2227
+#: ../AI/CoreLogic.pm:2225
 msgid "Couldn't find master, giving up\n"
 msgstr "無法找到主人, 放棄了\n"
 
-#: ../AI/CoreLogic.pm:2255
+#: ../AI/CoreLogic.pm:2253
 #, perl-format
 msgid "My master warped at (%s, %s) - moving to warp point\n"
 msgstr "我的主人進入傳點(%s, %s) - 跟著移動至傳點位置\n"
 
-#: ../AI/CoreLogic.pm:2879
+#: ../AI/CoreLogic.pm:2877
 #, perl-format
 msgid "Gathering: %s (%s)\n"
 msgstr "收集: %s (%s)\n"
 
-#: ../AI/CoreLogic.pm:2896
+#: ../AI/CoreLogic.pm:2894
 #, perl-format
 msgid "Failed to gather %s (%s) : Lost target\n"
 msgstr "收集 %s (%s) 失敗: 失去目標\n"
 
-#: ../AI/CoreLogic.pm:2904
+#: ../AI/CoreLogic.pm:2902
 #, perl-format
 msgid "Failed to gather %s (%s) : No looting!\n"
 msgstr "收集 %s (%s) 失敗: 不可橫取!\n"
 
-#: ../AI/CoreLogic.pm:2908
+#: ../AI/CoreLogic.pm:2906
 #, perl-format
 msgid "Failed to gather %s (%s) : Timeout\n"
 msgstr "收集 %s (%s) 失敗: 逾時\n"
 
-#: ../AI/CoreLogic.pm:2959
+#: ../AI/CoreLogic.pm:2957
 msgid "Teleporting to avoid all players\n"
 msgstr "正在瞬移以避免所有的玩家\n"
 
-#: ../AI/CoreLogic.pm:2999
+#: ../AI/CoreLogic.pm:2997
 msgid "Teleporting due to insufficient HP/SP or too many aggressives\n"
 msgstr "由於HP/SP不足或有太多攻擊而瞬移\n"
 
-#: ../AI/CoreLogic.pm:3012
+#: ../AI/CoreLogic.pm:3010
 #, perl-format
 msgid "Teleporting to avoid %s\n"
 msgstr "瞬移以避開 %s\n"
 
-#: ../AI/CoreLogic.pm:3022
+#: ../AI/CoreLogic.pm:3020
 #, perl-format
 msgid "Teleporting due to monster being too close %s\n"
 msgstr "因魔物太靠近而瞬移 %s\n"
 
-#: ../AI/CoreLogic.pm:3039
+#: ../AI/CoreLogic.pm:3037
 msgid "Teleporting due to idle\n"
 msgstr "因閒置而瞬移\n"
 
-#: ../AI/CoreLogic.pm:3051
+#: ../AI/CoreLogic.pm:3049
 msgid "Teleporting to avoid portal\n"
 msgstr "正在瞬移以避免傳點\n"
 
-#: ../AI/CoreLogic.pm:3073 ../Misc.pm:1334
+#: ../AI/CoreLogic.pm:3071 ../Misc.pm:1334
 #, perl-format
 msgid "The current map (%s) is not on the list of allowed maps.\n"
 msgstr "現在的地圖(%s)不在允許的地圖清單裡.\n"
 
-#: ../AI/CoreLogic.pm:3074 ../Misc.pm:1335
+#: ../AI/CoreLogic.pm:3072 ../Misc.pm:1335
 #, perl-format
 msgid "** The current map (%s) is not on the list of allowed maps.\n"
 msgstr "** 現在的地圖(%s)不在允許的地圖清單裡.\n"
 
-#: ../AI/CoreLogic.pm:3076
+#: ../AI/CoreLogic.pm:3074
 msgid "Respawning to save point.\n"
 msgstr "瞬移回重生點.\n"
 
-#: ../AI/CoreLogic.pm:3077
+#: ../AI/CoreLogic.pm:3075
 msgid "** Respawning to save point.\n"
 msgstr "** 正在瞬移回重生點.\n"
 
-#: ../AI/CoreLogic.pm:3130
+#: ../AI/CoreLogic.pm:3128
 #, perl-format
 msgid "Disconnecting for 30 secs to avoid %s\n"
 msgstr "斷線 30 秒以迴避 %s\n"
 
-#: ../AI/CoreLogic.pm:3133
+#: ../AI/CoreLogic.pm:3131
 #, fuzzy, perl-format
 msgid "Disconnecting for %s secs to avoid %s\n"
 msgstr "斷線 30 秒以迴避 %s\n"
 
-#: ../AI/CoreLogic.pm:3187
+#: ../AI/CoreLogic.pm:3185
 #, fuzzy
 msgid "Auto disconnecting on Player!\n"
 msgstr "因密語而斷線中!\n"
 
-#: ../AI/CoreLogic.pm:3188
+#: ../AI/CoreLogic.pm:3186
 #, fuzzy
 msgid "*** Nearby is another player, auto disconnect! ***\n"
 msgstr "*** 您已死亡, 自動斷線! ***\n"
 
-#: ../AI/CoreLogic.pm:3212
+#: ../AI/CoreLogic.pm:3210
 msgid "Pet hunger reaches the return value.\n"
 msgstr ""
 
-#: ../AI/CoreLogic.pm:3217
+#: ../AI/CoreLogic.pm:3215
 msgid "Pet hunger reaches the feed value.\n"
 msgstr ""
 
@@ -555,23 +664,23 @@ msgstr "尚未鑑定"
 
 #: ../Interface/Wx/StatView/Exp.pm:15
 msgid "Botting time"
-msgstr ""
+msgstr "自動攻擊時間"
 
 #: ../Interface/Wx/StatView/Exp.pm:16
 msgid "BaseExp"
-msgstr ""
+msgstr "經驗值"
 
 #: ../Interface/Wx/StatView/Exp.pm:17
 msgid "BaseExp/Hour"
-msgstr ""
+msgstr "每小時經驗值"
 
 #: ../Interface/Wx/StatView/Exp.pm:18
 msgid "JobExp"
-msgstr ""
+msgstr "職業經驗值"
 
 #: ../Interface/Wx/StatView/Exp.pm:19
 msgid "JobExp/Hour"
-msgstr ""
+msgstr "每小時職業經驗值"
 
 #: ../Interface/Wx/StatView/Exp.pm:20
 msgid "Zeny"
@@ -579,27 +688,27 @@ msgstr ""
 
 #: ../Interface/Wx/StatView/Exp.pm:21
 msgid "Zeny/Hour"
-msgstr ""
+msgstr "每小時 Zeny"
 
 #: ../Interface/Wx/StatView/Exp.pm:22
 msgid "Base Levelup Time Estimation"
-msgstr ""
+msgstr "預估升級時間"
 
 #: ../Interface/Wx/StatView/Exp.pm:23
 msgid "Job Levelup Time Estimation"
-msgstr ""
+msgstr "預估職業升級時間"
 
 #: ../Interface/Wx/StatView/Exp.pm:24
 msgid "Died"
-msgstr ""
+msgstr "死亡數"
 
 #: ../Interface/Wx/StatView/Exp.pm:25
 msgid "Bytes Sent"
-msgstr ""
+msgstr "已傳送位元組"
 
 #: ../Interface/Wx/StatView/Exp.pm:26
 msgid "Bytes Received"
-msgstr ""
+msgstr "已接收位元組"
 
 #: ../Interface/Wx/StatView/Exp.pm:28
 msgid "Reset"
@@ -668,11 +777,8 @@ msgid "Aspd"
 msgstr ""
 
 #: ../Interface/Wx/StatView/Homunculus.pm:43 ../Interface/Wx/StatView/You.pm:40
-#, fuzzy
 msgid "Skill point"
-msgstr ""
-"\n"
-"技能點數: %d\n"
+msgstr "技能點數"
 
 #: ../Interface/Wx/StatView/Homunculus.pm:44 ../Interface/Wx/StatView/Pet.pm:21
 msgid "Feed"
@@ -5462,7 +5568,7 @@ msgstr "您可以賣 %s 個物品!\n"
 #. Translation Comment: Spirit sphere of the monks
 #: ../Network/Receive.pm:1685
 msgid "spirit"
-msgstr ""
+msgstr "氣彈"
 
 #. Translation Comment: Coin of the gunslinger
 #: ../Network/Receive.pm:1688
@@ -5963,11 +6069,11 @@ msgstr "計算路徑以尋找主人: %s (%s,%s)\n"
 
 #: ../Actor.pm:370
 msgid "Your "
-msgstr ""
+msgstr "您的"
 
 #: ../Actor.pm:382
 msgid "itself"
-msgstr ""
+msgstr "它自己"
 
 #: ../Actor.pm:725
 #, perl-format
@@ -6956,12 +7062,11 @@ msgid "Exp report not yet ready\n"
 msgstr "經驗值報告尚未準備好\n"
 
 #: ../Commands.pm:1836
-#, fuzzy
 msgid " Exp Report "
-msgstr "經驗值報告"
+msgstr " 經驗值報告 "
 
 #: ../Commands.pm:1837
-#, fuzzy, perl-format
+#, perl-format
 msgid ""
 "Botting time : %s\n"
 "BaseExp      : %s %s\n"
@@ -6976,19 +7081,18 @@ msgid ""
 "Bytes Sent   : %s\n"
 "Bytes Rcvd   : %s\n"
 msgstr ""
-"------------經驗值報告------------\n"
-"Botting 時間 : %s\n"
-"Base 經驗值   : %s %s\n"
-"Job 經驗值   : %s %s\n"
-"每小時Base經驗值 : %s %s\n"
-"每小時Job 經驗值 : %s %s\n"
-"金錢           : %s\n"
-"每小時金錢  : %s\n"
-"預計下次Base升級所需時間 : %s\n"
-"預計下次Job 升級所需時間 : %s\n"
+"自動攻擊時間 : %s\n"
+"經驗值 : %s %s\n"
+"職業經驗值 : %s %s\n"
+"每小時經驗值 : %s %s\n"
+"每小時職業經驗值 : %s %s\n"
+"Zeny : %s\n"
+"每小時 Zeny : %s\n"
+"預計下次升級所需時間 : %s\n"
+"預計下次職業升級所需時間 : %s\n"
 "死亡次數 : %s\n"
-"位元組發送  : %s\n"
-"位元組接收  : %s\n"
+"位元組發送 : %s\n"
+"位元組接收 : %s\n"
 
 #: ../Commands.pm:1865
 #, fuzzy
@@ -7291,11 +7395,8 @@ msgid " Slave Skill List "
 msgstr "目標已死亡\n"
 
 #: ../Commands.pm:2258
-#, fuzzy
 msgid "   # Skill Name                     Lv      SP\n"
-msgstr ""
-"-----------技能清單------------\n"
-"   # 技能名稱                       Lv      SP\n"
+msgstr "   # 技能名稱                        Lv      SP\n"
 
 #: ../Commands.pm:2266 ../Commands.pm:4348
 #, perl-format
@@ -8567,14 +8668,10 @@ msgstr ""
 "技能 %s 並不存在.\n"
 
 #: ../Commands.pm:4339
-#, fuzzy
 msgid " Skill List "
-msgstr ""
-"\n"
-"技能點數: %d\n"
+msgstr " 技能列表 "
 
 #: ../Commands.pm:4340
-#, fuzzy
 msgid "   # Skill Name                          Lv      SP\n"
 msgstr ""
 "-----------技能清單------------\n"
@@ -8724,12 +8821,11 @@ msgid "Character status information not yet available.\n"
 msgstr "角色狀態資訊尚未有效.\n"
 
 #: ../Commands.pm:4566
-#, fuzzy
 msgid " Status "
-msgstr "狀態: %s \n"
+msgstr " 狀態 "
 
 #: ../Commands.pm:4568
-#, fuzzy, perl-format
+#, perl-format
 msgid ""
 "@<<<<<<<<<<<<<<<<<<<<<<<         HP: @>>>>>>>>>>>>>>>>>>\n"
 "@<<<<<<<<<<<<<<<<<<<<<<<         SP: @>>>>>>>>>>>>>>>>>>\n"
@@ -8743,19 +8839,17 @@ msgid ""
 "Total Time spent (sec): @>>>>>>>>\n"
 "Last Monster took (sec): @>>>>>>>"
 msgstr ""
-"------------------------ 狀態 --------------------------\n"
 "@<<<<<<<<<<<<<<<<<<<<<<<         HP: @>>>>>>>>>>>>>>>>>>\n"
 "@<<<<<<<<<<<<<<<<<<<<<<<         SP: @>>>>>>>>>>>>>>>>>>\n"
 "Base: @<<    @>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
 "Job : @<<    @>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"
-"Zeny: @<<<<<<<<<<<<<<<<<     負重: @>>>>>>>>>>>>>>>>>>\n"
+"Zeny: @<<<<<<<<<<<<<<<<<        負重: @>>>>>>>>>>>>>>>>>>\n"
 "狀態: %s\n"
-"氣球數/錢幣數: %s\n"
-"--------------------------------------------------------\n"
-"對敵總傷害: @>>>>>>>>>>>>> 每秒輸出傷害: @<<<<<<<<<<<<<<\n"
+"氣球數/錢幣數/符咒數: %s\n"
+"\n"
+"對敵總傷害: @<<<<<<<<<<<<< 每秒輸出傷害: @<<<<<<<<<<<<<<\n"
 "花費時間 (秒): @>>>>>>>>\n"
-"打死最後一隻魔物所花時間 (秒): @>>>>>>>\n"
-"--------------------------------------------------------"
+"打死最後一隻魔物所花時間 (秒): @>>>>>>>"
 
 #: ../Commands.pm:4609
 #, fuzzy
@@ -10611,6 +10705,18 @@ msgstr "歡迎來到 %s."
 msgid "Attempt to get SP required for a passive skill (%s)\n"
 msgstr ""
 
+#: ../Utils.pm:1342
+msgid "hours"
+msgstr "小時"
+
+#: ../Utils.pm:1343
+msgid "minutes"
+msgstr "分"
+
+#: ../Utils.pm:1344 ../Utils.pm:1346
+msgid "seconds"
+msgstr "秒"
+
 #: ../functions.pl:116
 #, perl-format
 msgid ""
@@ -10756,637 +10862,3 @@ msgstr "%s尚未連線 - %s"
 #, perl-format
 msgid "%sConnecting - %s"
 msgstr "%s連線中 - %s"
-
-#, fuzzy
-#~ msgid "%s can't reach or damage target, dropping target\n"
-#~ msgstr "無法到達或傷害到目標, 放棄目標\n"
-
-#, fuzzy
-#~ msgid "Teleport due to dropping %s attack target\n"
-#~ msgstr "因放棄要攻擊的目標而瞬移\n"
-
-#, fuzzy
-#~ msgid "%s target died\n"
-#~ msgstr "目標已死亡\n"
-
-#, fuzzy
-#~ msgid "%s target lost\n"
-#~ msgstr "目標已失去\n"
-
-#, fuzzy
-#~ msgid "Dropping target - %s will not kill steal others\n"
-#~ msgstr "放棄目標 - 您不可搶別人的怪\n"
-
-#, fuzzy
-#~ msgid "%s has no LOS from (%d, %d) to target (%d, %d)"
-#~ msgstr "從 %s (%s,%s) 到 (%s,%s) 的傳點無 LOS.\n"
-
-#, fuzzy
-#~ msgid "Unable to calculate a route to %s target, dropping target\n"
-#~ msgstr "無法計算路徑至目標, 放棄目標\n"
-
-#, fuzzy
-#~ msgid "%s %s\n"
-#~ msgstr "%s 有 %s "
-
-#, fuzzy
-#~ msgid ""
-#~ "#  Name                                   Type        Qty  "
-#~ "Price           Sold\n"
-#~ msgstr ""
-#~ "%s\n"
-#~ "#  名稱                                     類型         數量      價"
-#~ "格    已賣\n"
-
-#~ msgid "Cannot load control file %s"
-#~ msgstr "無法載入 control 檔案 %s"
-
-#~ msgid "Cannot load table file %s"
-#~ msgstr "無法載入 table 檔案 %s"
-
-#~ msgid "Auto-storaging due to insufficient %s\n"
-#~ msgstr "因 %s 不足而啟動自動存倉功能\n"
-
-#~ msgid "Teleporting to auto-storage\n"
-#~ msgstr "瞬移以進行自動存倉功能\n"
-
-#~ msgid "Calculating auto-storage route to: %s(%s): %s, %s\n"
-#~ msgstr "正在計算自動存倉路徑至: %s(%s): %s, %s\n"
-
-#~ msgid "Warning storageAuto has changed. Please read News.txt\n"
-#~ msgstr "警告: storageAuto已改變. 請閱讀News.txt\n"
-
-#~ msgid "Using storage steps defined in config.\n"
-#~ msgstr "使用config檔定義的存倉步驟.\n"
-
-#~ msgid "Something is wrong with storageAuto_npc_type in your config.\n"
-#~ msgstr "您的config檔中的 storageAuto_npc_type 有誤.\n"
-
-#~ msgid "Disconnecting because storage is full!\n"
-#~ msgstr "因倉庫已滿而斷線中!\n"
-
-#~ msgid "Attempt to get %s x %s from storage, retry: %s\n"
-#~ msgstr "嘗試從倉庫獲得 %s x %s, 重試次數: %s\n"
-
-#~ msgid "storage: %s out of stock\n"
-#~ msgstr "倉庫: %s 已罄\n"
-
-#~ msgid ""
-#~ "Kore tried to get an item from storage 3 times, but failed.\n"
-#~ "This problem could be caused by a server bug.\n"
-#~ "To work around this problem, set 'relogAfterStorage' to 1, and relogin.\n"
-#~ msgstr ""
-#~ "Kore試著從倉庫拿取物品3次, 但都失敗了.\n"
-#~ "這個問題可能是因為伺服器bug引起的.\n"
-#~ "若要在這個問題下進行, 請設定 'relogAfterStorage' 為1, 然後重新登入.\n"
-
-#~ msgid "Character is still overweight after storageAuto (storage is full?)\n"
-#~ msgstr "在自動存倉後角色仍然負重 (是否倉庫已滿?)\n"
-
-#~ msgid "Disconnecting on storage full!\n"
-#~ msgstr "因倉庫已滿而斷線中!\n"
-
-#~ msgid "Auto-sell sequence completed.\n"
-#~ msgstr "自動賣出的程序已完成.\n"
-
-#~ msgid "Teleporting to auto-sell\n"
-#~ msgstr "瞬移以進行自動賣出功能\n"
-
-#~ msgid "Calculating auto-sell route to: %s(%s): %s, %s\n"
-#~ msgstr "正在計算自動賣出路徑至: %s(%s): %s, %s\n"
-
-#, fuzzy
-#~ msgid "Teleporting to auto-buy\n"
-#~ msgstr "瞬移以進行自動賣出功能\n"
-
-#, fuzzy
-#~ msgid "Calculating auto-buy route to: %s (%s): %s, %s\n"
-#~ msgstr "正在計算自動賣出路徑至: %s(%s): %s, %s\n"
-
-#, fuzzy
-#~ msgid "Invalid map specified for lockMap - map %s doesn't exist\n"
-#~ msgstr "無效的指定伺服器或伺服器並不存在...\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "Invalid coordinates specified for lockMap, coordinates are unwalkable\n"
-#~ msgstr ""
-#~ "無效的randomWalk指定座標(座標點是無法走動區域); randomWalk disabled\n"
-
-#, fuzzy
-#~ msgid "Calculating lockMap route to: %s(%s): %s, %s\n"
-#~ msgstr "計算路徑至: %s(%s): %s, %s\n"
-
-#, fuzzy
-#~ msgid "Calculating lockMap route to: %s(%s)\n"
-#~ msgstr "計算路徑至: %s(%s)\n"
-
-#, fuzzy
-#~ msgid "Auto-adding stat %s\n"
-#~ msgstr "自動加技能點 %s\n"
-
-#~ msgid "Please equip arrow first."
-#~ msgstr "請先裝備箭矢."
-
-#~ msgid "Lost connection; exiting\n"
-#~ msgstr "失去連線; 結束中\n"
-
-#~ msgid "Minimap indicator at location %d, %d with the color %s cleared\n"
-#~ msgstr "小地圖指標位於座標 %d, %d 並使用顏色 %s 標示清楚\n"
-
-#~ msgid ""
-#~ "----------Responses-----------\n"
-#~ "#  Response\n"
-#~ msgstr ""
-#~ "------------回應--------------\n"
-#~ "#  回應\n"
-
-#~ msgid "You've been muted for %s minutes, auto disconnect!\n"
-#~ msgstr "您被禁言 %s 分鐘, 自動斷線!\n"
-
-#~ msgid "[GM] %s\n"
-#~ msgstr "[GM] %s\n"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "#  Name                                          Type        Amount       "
-#~ "Price\n"
-#~ msgstr ""
-#~ "%s\n"
-#~ "#  名稱                                          類型        數量         "
-#~ "價格\n"
-
-#~ msgid ""
-#~ "----------------- Warp Portal --------------------\n"
-#~ "#  Place                           Map\n"
-#~ msgstr ""
-#~ "------------------- 傳送點 -----------------------\n"
-#~ "#  地點                            地圖\n"
-
-#, fuzzy
-#~ msgid "Quest: %s is now %s.\n"
-#~ msgstr "魔物 %s (%d) 現在為: %s\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "----------%s's Store List-----------\n"
-#~ "#  Name                    Type               Price\n"
-#~ msgstr ""
-#~ "----------商店物品清單-----------\n"
-#~ "#  名稱                    類型           價格\n"
-
-#~ msgid "Server %s selected\n"
-#~ msgstr "伺服器 %s 已選擇\n"
-
-#~ msgid "*** You disconnected, auto quit! ***\n"
-#~ msgstr "*** 您已斷線, 自動結束! ***\n"
-
-#~ msgid "Disconnected from Map Server, exiting...\n"
-#~ msgstr "從地圖伺服器斷線, 結束中...\n"
-
-#~ msgid "exiting...\n"
-#~ msgstr "結束中...\n"
-
-#~ msgid "-------------------------------------------------------\n"
-#~ msgstr "-------------------------------------------------------\n"
-
-#~ msgid "Error: You cannot type anything except 'quit' right now.\n"
-#~ msgstr "錯誤: 此刻您除了'quit'外無法鍵入任何指令.\n"
-
-#~ msgid "Unable to inject NetRedirect.dll"
-#~ msgstr "無法引入 NetRedirect.dll"
-
-#~ msgid "------ AI Sequence ---------------------\n"
-#~ msgstr "------ AI 序列 -------------------------\n"
-
-#~ msgid "------ AI Sequences --------------------\n"
-#~ msgstr "------ AI 序列 -------------------------\n"
-
-#~ msgid "-----------Card List-----------\n"
-#~ msgstr "-----------卡片清單------------\n"
-
-#~ msgid ""
-#~ "-------------Cart--------------\n"
-#~ "#  Name\n"
-#~ msgstr ""
-#~ "------------手推車-------------\n"
-#~ "#  名稱\n"
-
-#~ msgid ""
-#~ "------------------------------- Chat Room List "
-#~ "--------------------------------\n"
-#~ "#   Title                                  Owner                Users   "
-#~ "Type\n"
-#~ msgstr ""
-#~ "--------------------------------- 聊天室清單 "
-#~ "----------------------------------\n"
-#~ "#   聊天室名稱                             擁有人               使用者  類"
-#~ "型\n"
-
-#~ msgid ""
-#~ "-----------Chat Room Info-----------\n"
-#~ "Title                     Users   Public/Private\n"
-#~ msgstr ""
-#~ "-------------聊天室資訊-------------\n"
-#~ "聊天室名稱                使用者  公開/私人\n"
-
-#~ msgid "------ Chat History --------------------\n"
-#~ msgstr "------ 聊天歷史記錄 --------------------\n"
-
-#~ msgid "-----------Current Deal-----------\n"
-#~ msgstr "------------目前的交易------------\n"
-
-#~ msgid "zeny: %-25s zeny: %-14s"
-#~ msgstr "金錢: %-25s 金錢: %-14s"
-
-#~ msgid ""
-#~ "-[Monster Killed Count]-----------------------\n"
-#~ "#   ID     Name                      Count\n"
-#~ msgstr ""
-#~ "-[殺死的魔物計算]-----------------------------\n"
-#~ "#   ID     名稱                       計數\n"
-
-#~ msgid ""
-#~ "-[Item Change Count]--------------------------\n"
-#~ "Name                                    Count\n"
-#~ msgstr ""
-#~ "-[物品改變量計算]-----------------------------\n"
-#~ "名稱                                     計數\n"
-
-#, fuzzy
-#~ msgid "--------- Slave AI Sequence ------------\n"
-#~ msgstr "------ AI 序列 -------------------------\n"
-
-#~ msgid ""
-#~ "===============Skill Description===============\n"
-#~ "Skill: %s\n"
-#~ "\n"
-#~ msgstr ""
-#~ "===================技能描述====================\n"
-#~ "技能: %s\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "---------- Guild Information ----------\n"
-#~ "Name    : @<<<<<<<<<<<<<<<<<<<<<<<<\n"
-#~ "Lv      : @<<\n"
-#~ "Exp     : @>>>>>>>>>/@<<<<<<<<<<\n"
-#~ "Master  : @<<<<<<<<<<<<<<<<<<<<<<<<\n"
-#~ "Connect : @>>/@<<"
-#~ msgstr ""
-#~ "-------------- 公會資訊 ---------------\n"
-#~ "名稱    : @<<<<<<<<<<<<<<<<<<<<<<<<\n"
-#~ "等級    : @<<\n"
-#~ "經驗值  : @>>>>>>>>>/@<<<<<<<<<<\n"
-#~ "公會會長: @<<<<<<<<<<<<<<<<<<<<<<<<\n"
-#~ "Connect : @>>/@<<"
-
-#~ msgid ""
-#~ "------------ Guild  Member ------------\n"
-#~ "#  Name                       Job        Lv  Title                    "
-#~ "Online\n"
-#~ msgstr ""
-#~ "-------------- 公會會員 ---------------\n"
-#~ "#  名字                       職業       Lv  稱號                     是否"
-#~ "上線\n"
-
-#~ msgid "--------------- Available commands ---------------\n"
-#~ msgstr "------------------- 有效的指令 -------------------\n"
-
-#~ msgid "------ Item History --------------------\n"
-#~ msgstr "------ 物品歷史記錄 --------------------\n"
-
-#~ msgid "-----------Inventory-----------\n"
-#~ msgstr "------------物品欄-------------\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "------------------ Monster Info ------------------\n"
-#~ "%s (%d)\n"
-#~ "-------------------------------------------------\n"
-#~ "Walk speed: %s secs per block\n"
-#~ msgstr ""
-#~ "---------------- 角色清單 ----------------\n"
-#~ "%s\n"
-#~ "------------------------------------------\n"
-
-#~ msgid "Shop opened (%s) with %d selling items.\n"
-#~ msgstr "露店 (%s) 已開啟並含有 %d 個要賣的物品.\n"
-
-#, fuzzy
-#~ msgid "You can gather %d items.\n"
-#~ msgstr "您可以賣 %s 個物品!\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "-----------Pet Status-----------\n"
-#~ "Name: %-23s Accessory: %s\n"
-#~ msgstr ""
-#~ "------------寵物狀態------------\n"
-#~ "名稱: %-23s 裝飾品: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "------------Pet List------------\n"
-#~ "#   Name                                               Distance    "
-#~ "Coordinates\n"
-#~ msgstr ""
-#~ "------------玩家清單-------------\n"
-#~ "#    名稱                                性別  Lv  Job         距離  座"
-#~ "標\n"
-
-#~ msgid ""
-#~ "--------- Currently loaded plugins ---------\n"
-#~ "#   Name              Description\n"
-#~ msgstr ""
-#~ "----------- 目前已載入的 plugins -----------\n"
-#~ "#   名稱              描述\n"
-
-#~ msgid "-----------PM List-----------\n"
-#~ msgstr "----------密頻清單-----------\n"
-
-#~ msgid ""
-#~ "------------- Sell list -------------\n"
-#~ "#   Item                           Amount\n"
-#~ msgstr ""
-#~ "------------- 賣物清單 --------------\n"
-#~ "#   物品                           數量\n"
-
-#~ msgid "-----------Storage-------------\n"
-#~ msgstr "------------倉庫---------------\n"
-
-#~ msgid "Capacity: %d/%d\n"
-#~ msgstr "容量: %d/%d\n"
-
-#~ msgid ""
-#~ "----------Responses-----------\n"
-#~ "NPC: %s\n"
-#~ "#  Response\n"
-#~ msgstr ""
-#~ "------------回應--------------\n"
-#~ "NPC: %s\n"
-#~ "#  回應\n"
-
-#~ msgid ""
-#~ "Error in function 'im' (Use Item on Monster)\n"
-#~ "Inventory Item %s is not of type Usable.\n"
-#~ msgstr ""
-#~ "'im' 功能錯誤 (使用物品在魔物身上)\n"
-#~ "物品欄的物品 %s 非可使用物品.\n"
-
-#~ msgid ""
-#~ "Error in function 'ip' (Use Item on Player)\n"
-#~ "Inventory Item %s is not of type Usable.\n"
-#~ msgstr ""
-#~ "'ip' 功能錯誤 (使用物品在玩家身上)\n"
-#~ "物品欄的物品 %s 非可使用物品.\n"
-
-#~ msgid ""
-#~ "Error in function 'is' (Use Item on Yourself)\n"
-#~ "Inventory Item %s is not of type Usable.\n"
-#~ msgstr ""
-#~ "'is' 功能錯誤 (使用物品在自己身上)\n"
-#~ "物品欄的物品 %s 非可使用物品.\n"
-
-#~ msgid ""
-#~ "-----------Vender List-----------\n"
-#~ "#   Title                                Coords     Owner\n"
-#~ msgstr ""
-#~ "----------露天商店清單-----------\n"
-#~ "#   商店名稱                             座標       擁有人\n"
-
-#, fuzzy
-#~ msgid "%s\n"
-#~ msgstr "%s%s\n"
-
-#, fuzzy
-#~ msgid "Teleporting due to dropping attack target\n"
-#~ msgstr "因放棄要攻擊的目標而瞬移\n"
-
-#, fuzzy
-#~ msgid "Base Exp gained: %d (%.2f%%)n"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Job Exp gained: %d (%.2f%%)n"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Unknown (type=%d) Exp gained: %dn"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Base Quest Exp gained: %d (%.2f%%)n"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Job Quest Exp gained: %d (%.2f%%)n"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Unknown (type=%d) Quest Exp gained: %dn"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Base Unknown (flag=%d) Exp gained: %d (%.2f%%)n"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Job Unknown (flag=%d) Exp gained: %d (%.2f%%)n"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Unknown (type=%d) Unknown (flag=%d) Exp gained: %dn"
-#~ msgstr "獲得經驗值: %d/%d (%.2f%%/%.2f%%)\n"
-
-#, fuzzy
-#~ msgid "Slave is stuck at %s (%d,%d), while walking from (%d,%d) to (%d,%d)."
-#~ msgstr "人工生命體在 %s (%d,%d) 呆住, 當要從 (%d,%d) 走到 (%d,%d) 的時候."
-
-#, fuzzy
-#~ msgid "Unable to download the manual."
-#~ msgstr "無法載入檔案 %s."
-
-#~ msgid "Destination reached.\n"
-#~ msgstr "目的地已到達.\n"
-
-#, fuzzy
-#~ msgid "none"
-#~ msgstr "無"
-
-#, fuzzy
-#~ msgid "%s failed to leave party (%d)\n"
-#~ msgstr "%s 詠唱 %s 失敗\n"
-
-#~ msgid "PvP Display Mode\n"
-#~ msgstr "PvP顯示模式\n"
-
-#~ msgid "GvG Display Mode\n"
-#~ msgstr "GvG顯示模式\n"
-
-#, fuzzy
-#~ msgid "Battleground Display Mode\n"
-#~ msgstr "PvP顯示模式\n"
-
-#, fuzzy
-#~ msgid "%s (%s)"
-#~ msgstr "%s%s\n"
-
-#, fuzzy
-#~ msgid "%s %s out of %s state.\n"
-#~ msgstr "倉庫: %s 已罄\n"
-
-#, fuzzy
-#~ msgid "%s have ailment: %s.\n"
-#~ msgstr "%s 詠唱 %s 失敗\n"
-
-#, fuzzy
-#~ msgid "%s have look: %s.\n"
-#~ msgstr "(To %s) : %s\n"
-
-#, fuzzy
-#~ msgid "%s are out of look: %s.\n"
-#~ msgstr "倉庫: %s 已罄\n"
-
-#, fuzzy
-#~ msgid "%s is out of look: %s.\n"
-#~ msgstr "倉庫: %s 已罄\n"
-
-#, fuzzy
-#~ msgid "%s are %s: %s%s\n"
-#~ msgstr "%s 有 %s "
-
-#, fuzzy
-#~ msgid "Found your Slave!\n"
-#~ msgstr "找到我的主人了!\n"
-
-#~ msgid "You lost your Homunculus!\n"
-#~ msgstr "您弄丟了您的人工生命體!\n"
-
-#, fuzzy
-#~ msgid "Slave can't reach or damage target, dropping target\n"
-#~ msgstr "無法到達或傷害到目標, 放棄目標\n"
-
-#, fuzzy
-#~ msgid "Teleport due to dropping slave attack target\n"
-#~ msgstr "因放棄要攻擊的目標而瞬移\n"
-
-#, fuzzy
-#~ msgid "Slave target died\n"
-#~ msgstr "目標已死亡\n"
-
-#, fuzzy
-#~ msgid "Slave target lost\n"
-#~ msgstr "目標已失去\n"
-
-#, fuzzy
-#~ msgid "%s; no acceptable place for slave to stand\n"
-#~ msgstr "%s; 沒有合適的地方可站立\n"
-
-#, fuzzy
-#~ msgid "Unable to calculate a route to slave target, dropping target\n"
-#~ msgstr "無法計算路徑至目標, 放棄目標\n"
-
-#, fuzzy
-#~ msgid "Slave destination reached.\n"
-#~ msgstr "目的地已到達.\n"
-
-#~ msgid "Attacking: %s\n"
-#~ msgstr "正要攻擊: %s\n"
-
-#~ msgid "------------ Help for '%s' ------------\n"
-#~ msgstr "----------- 對於'%s'的幫助 ------------\n"
-
-#, fuzzy
-#~ msgid "%s are in %s state.\n"
-#~ msgstr "%s 正坐著.\n"
-
-#, fuzzy
-#~ msgid "%s are out of %s state.\n"
-#~ msgstr "倉庫: %s 已罄\n"
-
-#~ msgid "Teleporting due to attack from %s\n"
-#~ msgstr "因遭受 %s 攻擊而瞬移\n"
-
-#~ msgid "Next %d dmg could kill you. Teleporting...\n"
-#~ msgstr "下一被傷害值 %d 可能致死. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid "Slave teleporting due to attack from %s\n"
-#~ msgstr "因遭受 %s 攻擊而瞬移\n"
-
-#, fuzzy
-#~ msgid "Next %d dmg could kill your slave. Teleporting...\n"
-#~ msgstr "下一被傷害值 %d 可能致死. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid "%s hit your slave for more than %d dmg. Teleporting...\n"
-#~ msgstr "被 %s 傷害超過 %d. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid "%s hit your slave for more than %d dmg in lockMap. Teleporting...\n"
-#~ msgstr "在鎖定地圖中被 %s 傷害超過 %d. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid "%s hit your slave for a total of more than %d dmg. Teleporting...\n"
-#~ msgstr "被 %s 傷害的總值超過 %d. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "%s hit your slave for a total of more than %d dmg in lockMap. "
-#~ "Teleporting...\n"
-#~ msgstr "在鎖定地圖中被 %s 傷害的總值超過 %d. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "%s hit your slave when your homunculus' HP is too low. Teleporting...\n"
-#~ msgstr "%s 在您的人工生命體HP過低時攻擊他. 瞬移中...\n"
-
-#, fuzzy
-#~ msgid "Slave change target to aggressive : %s (%s)\n"
-#~ msgstr "改為目標為主動: %s (%s)\n"
-
-#, fuzzy
-#~ msgid "%s are casting %s on %s (Delay: %sms)\n"
-#~ msgstr "%s %s %s - 傷害: %s (延遲 %s)\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "Disconnecting due to break time: %s to %s\n"
-#~ "\n"
-#~ msgstr ""
-#~ "\n"
-#~ "斷線中, 由於休息時間: %s to %s\n"
-#~ "\n"
-
-#~ msgid "*** Disconnected due to Break Time: %s to %s ***\n"
-#~ msgstr "*** 已斷線, 由於休息時間: %s to %s ***\n"
-
-#, fuzzy
-#~ msgid "You can't logout, retry in 10 sec.\n"
-#~ msgstr "您無法交易 (fail code %s).\n"
-
-#~ msgid " (SVN Version) "
-#~ msgstr " (SVN 版本)"
-
-#, fuzzy
-#~ msgid "Teleporting due to dropping slave attack target\n"
-#~ msgstr "因放棄要攻擊的目標而瞬移\n"
-
-#~ msgid ""
-#~ "Syntax Error in function 'g' (Guild Chat)\n"
-#~ "Usage: g <message>\n"
-#~ msgstr ""
-#~ "'g' 功能語法錯誤 (公會頻道)\n"
-#~ "使用方法: g <要說話的內容>\n"
-
-#~ msgid ""
-#~ "Syntax Error in function 'p' (Party Chat)\n"
-#~ "Usage: p <message>\n"
-#~ msgstr ""
-#~ "'p' 功能語法錯誤 (隊頻說話)\n"
-#~ "使用方法: p <要說話的內容>\n"
-
-#, fuzzy
-#~ msgid "Summary: %s\n"
-#~ msgstr "[隊伍] %s\n"

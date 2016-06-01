@@ -375,7 +375,7 @@ sub processLook {
 	}
 }
 
-=pod
+=pod xxx
 ##### TALK WITH NPC ######
 sub processNPCTalk {
 	return if (AI::action ne "NPC");
@@ -1116,14 +1116,12 @@ sub processAutoStorage {
 			    )
 			) {
 				if ($storage{opened} && findKeyString(\%storage, "name", $config{"getAuto_$i"}) eq '') {
-=pod
-					#This works only for last getAuto item
-					if ($config{"getAuto_${i}_dcOnEmpty"}) {
- 						message TF("Disconnecting on empty %s!\n", $config{"getAuto_$i"});
-						chatLog("k", TF("Disconnecting on empty %s!\n", $config{"getAuto_$i"}));
-						quit();
-					}
-=cut
+					# #This works only for last getAuto item
+					# if ($config{"getAuto_${i}_dcOnEmpty"}) {
+ 				# 		message TF("Disconnecting on empty %s!\n", $config{"getAuto_$i"});
+					# 	chatLog("k", TF("Disconnecting on empty %s!\n", $config{"getAuto_$i"}));
+					# 	quit();
+					# }
 				} else {
 					if ($storage{openedThisSession} && findKeyString(\%storage, "name", $config{"getAuto_$i"}) eq '') {
 					} else {
