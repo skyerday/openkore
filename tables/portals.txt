@@ -344,18 +344,18 @@ bat_room 169 211 bat_room 154 150
 bat_c01 148 54 bat_room 154 150 0 c
 
 # iRO custom novice version of prt_fild08
-izlude 20 98 prt_fild08a 367 212
-moc_fild01 239 382 prt_fild08a 233 16
-moc_fild01 56 384 prt_fild08a 55 21
-prontera 156 22 prt_fild08a 170 378
-prt_fild07 383 239 prt_fild08a 16 239
-prt_fild07 385 186 prt_fild08a 16 187
-prt_fild08a 16 187 prt_fild07 385 186
-prt_fild08a 16 239 prt_fild07 383 239
-prt_fild08a 55 21 moc_fild01 56 384
-prt_fild08a 170 378 prontera 156 22
-prt_fild08a 233 16 moc_fild01 239 382
-prt_fild08a 371 212 izlude 24 98
+#izlude 20 98 prt_fild08a 367 212
+#moc_fild01 239 382 prt_fild08a 233 16
+#moc_fild01 56 384 prt_fild08a 55 21
+#prontera 156 22 prt_fild08a 170 378
+#prt_fild07 383 239 prt_fild08a 16 239
+#prt_fild07 385 186 prt_fild08a 16 187
+#prt_fild08a 16 187 prt_fild07 385 186
+#prt_fild08a 16 239 prt_fild07 383 239
+#prt_fild08a 55 21 moc_fild01 56 384
+#prt_fild08a 170 378 prontera 156 22
+#prt_fild08a 233 16 moc_fild01 239 382
+#prt_fild08a 371 212 izlude 24 98
 
 alb_ship 26 166 alberta 170 170
 alb_ship 37 174 alb_ship 68 99
@@ -1090,20 +1090,6 @@ iz_dun03 264 245 iz_dun04 26 24
 iz_dun04 26 24 iz_dun03 264 245
 izlu2dun 108 83 iz_dun00 168 173
 izlude 20 98 prt_fild08 367 212
-izlude 52 140 izlude_in 74 158
-izlude 109 151 izlude_in 65 84
-izlude 148 148 izlude_in 116 46
-izlude 216 129 izlude_in 148 127
-izlude_in 65 84 izlude 109 151
-izlude_in 74 158 izlude 52 140
-izlude_in 87 169 izlude_in 108 169
-izlude_in 108 169 izlude_in 87 169
-izlude_in 116 46 izlude 148 148
-izlude_in 148 127 izlude 216 129
-izlude_in 171 97 izlude_in 172 116
-izlude_in 172 116 izlude_in 171 97
-izlude_in 172 139 izlude_in 172 158
-izlude_in 172 158 izlude_in 172 139
 juperos_01 51 249 jupe_cave 29 52
 jupe_cave 147 52 yuno_fild07 202 175
 jupe_cave 29 52 juperos_01 54 246
@@ -2687,8 +2673,6 @@ airplane 254 54 airplane 91 67
 airplane 87 67 airplane 250 54
 yuno 96 261 airplane 244 58
 yuno 6 261 airplane_01 244 58
-izlude 149 39 izlude 182 56
-izlude 176 56 izlude 145 40
 moscovia 205 98 mosk_in 214 255
 moscovia 203 171 mosk_in 86 180
 mosk_in 222 128 mosk_in 288 118
@@ -2700,8 +2684,6 @@ mosk_in 150 192 mosk_in 204 188
 mosk_in 202 188 mosk_in 148 192
 mosk_in 220 273 mosk_in 152 280
 mosk_in 21 113 mosk_in 99 123
-izlude 128 226 arena_room 100 30
-arena_room 99 24 izlude 128 220
 mosk_in 93 61 moscovia 255 140
 mosk_in 93 91 moscovia 224 232
 mosk_in 13 179 moscovia 188 193
@@ -3089,3 +3071,21 @@ payon 140 85 payon_in01 14 51
 pay_arche 81 18 payon 228 330
 payon 228 330 pay_arche 81 22
 pay_fild01 333 360 payon 122 27
+izlude 110 182 izlude_in 65 87
+izlude 213 161 arena_room 100 30
+arena_room 123 88 arena_room 157 86
+arena_room 150 87 arena_room 116 88
+arena_room 115 71 arena_room 139 50
+arena_room 136 53 arena_room 111 78
+arena_room 114 102 arena_room 135 129
+arena_room 135 126 arena_room 106 99
+arena_room 84 103 arena_room 63 130
+arena_room 63 126 arena_room 86 96
+arena_room 76 87 arena_room 46 87
+arena_room 49 87 arena_room 80 86
+arena_room 84 71 arena_room 60 50
+arena_room 63 53 arena_room 86 74
+izlude 130 257 iz_ac01 99 29
+iz_ac01 100 24 izlude 127 253
+izlude 125 257 iz_ac01 99 29
+izlude_in 65 84 izlude 112 179
